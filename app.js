@@ -4,39 +4,19 @@ const ctx = canvas.getContext("2d");
 canvas.width = 800;
 canvas.height = 800;
 
-//project-1 house
-//My version
-ctx.moveTo(100, 200);
-ctx.lineTo(100, 400);
-ctx.lineTo(300, 400);
-ctx.lineTo(300, 200);
-ctx.lineTo(100, 200);
-ctx.fillStyle = "yellow";
-ctx.fill();
-ctx.beginPath();
-ctx.moveTo(100, 200);
-ctx.lineTo(200, 100);
-ctx.lineTo(300, 200);
-ctx.fillStyle = "brown";
-ctx.fill();
-ctx.beginPath();
-ctx.moveTo(175, 400);
-ctx.lineTo(175, 300);
-ctx.lineTo(225, 300);
-ctx.lineTo(225, 400);
-ctx.fillStyle = "grey";
+ctx.fillRect(300, 200, 30, 100);
+ctx.fillRect(450, 200, 30, 100);
+ctx.fillRect(340, 200, 100, 200);
+
+ctx.arc(390, 125, 50, 0, 2 * Math.PI);
 ctx.fill();
 
-//changing path for another version
 ctx.beginPath();
-ctx.fillStyle = "black";
+ctx.arc(50 + 315, 110, 5, 0, 2 * Math.PI);
+ctx.arc(100 + 315, 110, 5, 0, 2 * Math.PI);
+ctx.fillStyle = "white";
+ctx.fill();
 
-//Tutorial Version
-ctx.fillRect(400, 200, 50, 200);
-ctx.fillRect(600, 200, 50, 200);
-ctx.fillRect(500, 300, 50, 100);
-ctx.fillRect(400, 200, 200, 20);
-ctx.moveTo(400, 200);
-ctx.lineTo(525, 100);
-ctx.lineTo(650, 200);
+ctx.beginPath();
+ctx.arc(390, 140, 25, 0, Math.PI);
 ctx.fill();
