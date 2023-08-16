@@ -1,8 +1,9 @@
 body {
   /* background-color: tomato; */
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
+  text-align: center;
   height: 100vh;
 }
 
@@ -10,6 +11,12 @@ canvas {
   width: 800px;
   height: 800px;
   border: solid 1px black;
+}
+
+.color-palette {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .color-option {
