@@ -7,6 +7,7 @@ const lineWidth = document.querySelector("#line-width");
 const colorPicker = document.querySelector("#color");
 const modeBtn = document.querySelector("#fill-color");
 const resetBtn = document.querySelector("#reset");
+const eraseBtn = document.querySelector("#erase");
 
 canvas.width = 800;
 canvas.height = 500;
@@ -75,6 +76,16 @@ function onResetBtnClick() {
   ctx.beginPath();
 }
 
+function onEraseBtnClick() {
+  ctx.strokeStyle = "#ffffff";
+  colorPicker.value = "#ffffff";
+  if (isFill) {
+    onModeBtnClick();
+  } else {
+    ctx.beginPath();
+  }
+}
+
 canvas.addEventListener("mousemove", onMove);
 canvas.addEventListener("mousedown", onMouseDown);
 canvas.addEventListener("mouseup", onMouseUp);
@@ -84,3 +95,4 @@ colorPicker.addEventListener("change", onColorSelect);
 colorOptions.forEach((color) => color.addEventListener("click", onColorClick));
 modeBtn.addEventListener("click", onModeBtnClick);
 resetBtn.addEventListener("click", onResetBtnClick);
+eraseBtn.addEventListener("click", onEraseBtnClick);
