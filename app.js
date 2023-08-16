@@ -19,15 +19,19 @@ function onMove(event) {
     ctx.lineTo(event.offsetX, event.offsetY);
     ctx.stroke();
     return;
+  } else {
+    ctx.moveTo(event.offsetX, event.offsetY);
   }
-  ctx.moveTo(event.offsetX, event.offsetY);
 }
 
 function onMouseDown(event) {
   if (isFill) {
+    ctx.fillStyle = colorPicker.value;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
+    isPainting = false;
+  } else {
+    isPainting = true;
   }
-  isPainting = true;
 }
 
 function onMouseUp(event) {
@@ -59,14 +63,16 @@ function onModeBtnClick() {
     isFill = false;
     modeBtn.value = "Draw";
   } else {
-    modeBtn.value = "Fill";
     isFill = true;
+    modeBtn.value = "Fill";
   }
 }
 
 function onResetBtnClick() {
-  ctx.fillStyle = "#FFF";
+  ctx.fillStyle = "#ffffff";
+  //   colorPicker.value = "#ffffff";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.beginPath();
 }
 
 canvas.addEventListener("mousemove", onMove);
