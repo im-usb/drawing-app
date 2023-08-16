@@ -9,7 +9,7 @@ const modeBtn = document.querySelector("#fill-color");
 const resetBtn = document.querySelector("#reset");
 
 canvas.width = 800;
-canvas.height = 800;
+canvas.height = 600;
 ctx.lineWidth = lineWidth.value;
 let isPainting = false;
 let isFill = false;
